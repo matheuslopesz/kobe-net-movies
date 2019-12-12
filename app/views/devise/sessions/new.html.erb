@@ -1,11 +1,14 @@
+<% flash.each do |key, value| %>
+    <div class="flash <%= key %>"><%= value %></div>
+<% end %>
 <div class="wrapper fadeInDown">
   <div id="formContent">
     <div class="fadeIn first">
       <img src="/logo-net-movies.png" id="icon" alt="User Icon" />
     </div>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= f.text_field :email, autofocus: true, autocomplete: 'email', id:'login', class:'fadeIn second', name:'login', placeholder:"email" %>
-      <%= f.text_field :password, autocomplete: "current-password", id:"password", class:"fadeIn third", name:"login", placeholder:"password" %>
+      <%= f.text_field :email, autofocus: true, autocomplete: 'email',  class:'fadeIn second', placeholder:"email" %>
+      <%= f.text_field :password, autocomplete: "current-password",  class:"fadeIn third", placeholder:"password" %>
       <%= f.submit "Log in", class:'fadeIn fourth', value:'Log In' %>
     <% end %>
   </div>
