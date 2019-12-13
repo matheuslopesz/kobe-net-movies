@@ -4,7 +4,28 @@ body{
   color: #715BC1;
 }
 </style>
-<h1 style="margin-top: 100px"> New Releases </h1>
+
+<div style="margin-top: 100px">
+  <h1> Upcoming Movies </h1>,    
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+       <div class="container">
+        <div class="row">
+          <%  @upcoming_movies["results"].each do | movie | %>
+            <div class="col-sm complete-movie">
+              <%= movie["title"]  %>
+              <%= movie["original_title"]  %>
+              <%= movie["poster_path"]  %>
+              <%= movie["backdrop_path"]  %>
+              <%= movie["vote_average"]  %>
+              <%= movie["genres"]  %>
+              <%= movie["release_date"]  %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+</div>
+</div>
+
 
 
 
