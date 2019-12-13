@@ -1,85 +1,73 @@
 <style>
-body{
-  font-family: 'Zilla Slab', serif;
-}
-h1{ 
-  color: #715BC1;
-}
-.movie-item{
-  width: 200px;
-  text-align: center;
-}
-.movie-title{
-  font-weight: bold;
-  font-size: 18px;
-}
-.movie-poster{ 
-  width: 200px;
-  position: relative;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.vote-average{  
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1000;
-  top: 3px;
-  padding: 5px;
-  color: #FFFFFF;
-  font-weight: bold;
-  margin-left: 85px;
-  text-align: center;
-}
-.bad-score{
-  background-color: #FF003F;
-}
-.average-score{
-  background-color: #FEBA00;
-}
-.good-score{
-  background-color: #03C239;
-}
-.no-score{
-  background-color: white;
-}
+  body{
+    font-family: 'Zilla Slab', serif;
+  }
+  h1{
+    color: #715BC1;
+  }
+  .movie-item{
+    width: 200px;
+    text-align: center;
+  }
+  .movie-title{
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .movie-poster{
+    width: 200px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .vote-average{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1000;
+    top: 3px;
+    padding: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-left: 85px;
+    text-align: center;
+  }
+  .bad-score{
+    background-color: #FF003F;
+  }
+  .average-score{
+    background-color: #FEBA00;
+  }
+  .good-score{
+    background-color: #03C239;
+  }
+  .no-score{
+    background-color: white;
+  }
 </style>
-
 <div style="margin-top: 100px">
-  <h1> Upcoming Movies </h1>,    
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-       <div class="container">
-        <div class="row">
-          <%  @upcoming_movies["results"].each do | movie | %>
-            <div class="col-md-3">
-              <div class="movie-item">
-                <%= content_tag(:div, movie['vote_average'], :class =>"vote-average #{color_average(movie['vote_average'])}") %>
-                <div class="movie-poster">
-                  <%= link_to movie_path(movie['id']) do %>
-                    <%- if movie["poster_path"].nil? %>
-                      <%= image_tag "/poster-not-found-small.png" %>
-                    <%- else %> 
-                      <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie["poster_path"]}"%>
-                    <% end %>   
-                  <% end %>
-                </div>
-                
-                <div class="movie-title"> 
-                  <%= movie['title']  %> 
-                </div>
-                
-                <p><%= format_release_date(movie['release_date'])%></p>
-              </div>
-            
+  <h1> Upcoming Movies </h1>
+  <div class="container">
+    <div class="row">
+      <%  @upcoming_movies["results"].each do | movie | %>
+        <div class="col-md-3">
+          <div class="movie-item">
+            <%= content_tag(:div, movie['vote_average'], :class =>"vote-average #{color_average(movie['vote_average'])}") %>
+            <div class="movie-poster">
+              <%= link_to movie_path(movie['id']) do %>
+                <%- if movie["poster_path"].nil? %>
+                  <%= image_tag "/poster-not-found-small.png" %>
+                <%- else %>
+                  <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie["poster_path"]}"%>
+                <% end %>
+              <% end %>
             </div>
-          <% end %>
+            <div class="movie-title">
+              <%= movie['title']  %>
+            </div>
+            <p><%= format_release_date(movie['release_date'])%></p>
+          </div>
         </div>
-      </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-</div>
-
-
-
-
-
-
