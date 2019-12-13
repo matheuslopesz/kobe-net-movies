@@ -7,12 +7,14 @@ module HomeHelper
   end
 
   def color_average(average)
-    if average <= 6.9
-      'bad-score'
+    if average.zero?
+      'no-score'
     elsif average.between?(7.0, 7.9)
       'average-score'
     elsif average > 7.0
       'good-score'
+    elsif average <= 6.9
+      'bad-score'
     end
   end
 end

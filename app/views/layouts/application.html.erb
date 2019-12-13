@@ -12,7 +12,9 @@
 
   <body>
     <nav class="navbar navbar-dark fixed-top bg-purple-custom flex-md-nowrap p-0 shadow">
-      <img class="navbar-brand col-sm-3 col-md-2 mr-0" src="/net-movies-white.png" />
+      <%= link_to root_path , class:"navbar-brand col-sm-3 col-md-2 mr-0" do %>
+        <%= image_tag "/net-movies-white.png", style:"width: 317px"%>
+      <% end %>
       <%= form_tag(search_movie_by_query_path) do %>
          <%= text_field_tag :query,'', class: 'form-control form-control-dark w-100', placeholder: "search movie" %>
       <% end %>
