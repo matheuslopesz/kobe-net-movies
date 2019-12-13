@@ -1,7 +1,13 @@
 <style>
 body{
   font-family: 'Zilla Slab', serif;
+}
+h1{ 
   color: #715BC1;
+}
+.movie-title{
+  font-weight: bold;
+  font-size: 18px;
 }
 </style>
 
@@ -11,14 +17,14 @@ body{
        <div class="container">
         <div class="row">
           <%  @upcoming_movies["results"].each do | movie | %>
-            <div class="col-sm complete-movie">
-              <%= movie["title"]  %>
-              <%= movie["original_title"]  %>
-              <%= movie["poster_path"]  %>
-              <%= movie["backdrop_path"]  %>
-              <%= movie["vote_average"]  %>
-              <%= movie["genres"]  %>
-              <%= movie["release_date"]  %>
+            <div class="col-md-3">
+              <%= link_to href: 'http://www.example.com/' do %>
+                <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie["poster_path"]}"%>
+              <% end %>
+              <div class="movie-title"> 
+                <%= movie['title']  %> 
+              </div>
+              <p><%= format_release_date(movie['release_date'])%></p>
             </div>
           <% end %>
         </div>
