@@ -17,7 +17,7 @@ class Tmdb
   end
 
   def show_movie(movie_id)
-    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/#{movie_id}=?api_key#{TOKEN}")
+    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/#{movie_id}?api_key=#{TOKEN}")
     response.parsed_response
   end
 
