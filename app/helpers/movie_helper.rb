@@ -17,7 +17,9 @@ module MovieHelper
   end
 
   def format_release_date(date)
-    date.nil? ? l(date.to_date, format: :long) : 'no date'
+    return if date.nil?
+
+    date&.to_date ? l(date.to_date, format: :long) : 'no date'
   end
 
   def color_average(average)
