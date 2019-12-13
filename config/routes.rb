@@ -2,5 +2,6 @@ Rails.application.routes.draw do
   get 'home/index'
   devise_for :users
   root to: 'home#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :movies, only: :show
+  post 'movies/search', to: 'movies#search', as: "search_movie_by_query"
 end

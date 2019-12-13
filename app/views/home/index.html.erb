@@ -7,6 +7,7 @@ h1{
 }
 .movie-item{
   width: 200px;
+  text-align: center;
 }
 .movie-title{
   font-weight: bold;
@@ -22,14 +23,22 @@ h1{
   height: 30px;
   border-radius: 50%;
   position: absolute;
-  left: 0px;
-  top: 0px;
   z-index: 1000;
-  background-color: #92AD40;
+  top: 3px;
   padding: 5px;
   color: #FFFFFF;
   font-weight: bold;
-  ;
+  margin-left: 85px;
+  text-align: center;
+}
+.bad-score{
+  background-color: #FF003F;
+}
+.average-score{
+  background-color: #FEBA00;
+}
+.good-score{
+  background-color: #03C239;
 }
 </style>
 
@@ -41,12 +50,9 @@ h1{
           <%  @upcoming_movies["results"].each do | movie | %>
             <div class="col-md-3">
               <div class="movie-item">
-                <div class="vote-average"> 
-                  <%= movie['vote_average'].to_f  %> 
-                </div>
-                
+                <%= content_tag(:div, movie['vote_average'], :class =>"vote-average #{color_average(movie['vote_average'])}") %>
                 <div class="movie-poster">
-                  <%= link_to href: 'http://www.example.com/' do %>
+                  <%= link_to movie_path(movie['id']) do %>
                     <%= image_tag "https://image.tmdb.org/t/p/w200/#{movie["poster_path"]}"%>
                   <% end %>
                 </div>

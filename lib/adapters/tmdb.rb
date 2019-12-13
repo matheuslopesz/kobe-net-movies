@@ -20,4 +20,10 @@ class Tmdb
     response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/#{movie_id}?api_key=#{TOKEN}")
     response.parsed_response
   end
+
+  def search_movie(query)
+    formated_query = query.gsub(/[ ]/, '+')
+    response = self.class.get("#{BASE_URL}/#{API_VERSION}/search/movie?api_key=#{TOKEN}&query=#{formated_query}")
+    response.parsed_response
+  end
 end
