@@ -18,5 +18,9 @@ module NetMovies
     config.to_prepare do
       Devise::SessionsController.layout 'login'
     end
+
+    Bundler.require(*Rails.groups)
+    Dotenv::Railtie.load
+    HOSTNAME = ENV['HOSTNAME']
   end
 end

@@ -33,6 +33,8 @@ gem 'devise'
 gem 'httparty'
 gem 'tty-spinner'
 gem 'awesome_print'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

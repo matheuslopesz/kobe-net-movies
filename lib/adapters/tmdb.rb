@@ -12,18 +12,18 @@ class Tmdb
   API_VERSION = '3'
 
   def upcoming_movies
-    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/upcoming?api_key=#{TOKEN}")
+    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/upcoming?api_key=#{ENV['API_KEY']}")
     response.parsed_response
   end
 
   def show_movie(movie_id)
-    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/#{movie_id}?api_key=#{TOKEN}")
+    response = self.class.get("#{BASE_URL}/#{API_VERSION}/movie/#{movie_id}?api_key=#{ENV['API_KEY']}")
     response.parsed_response
   end
 
   def search_movie(query)
     formated_query = query.gsub(/[ ]/, '+')
-    response = self.class.get("#{BASE_URL}/#{API_VERSION}/search/movie?api_key=#{TOKEN}&query=#{formated_query}")
+    response = self.class.get("#{BASE_URL}/#{API_VERSION}/search/movie?api_key=#{ENV['API_KEY']}&query=#{formated_query}")
     response.parsed_response
   end
 end
