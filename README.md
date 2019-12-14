@@ -3,16 +3,20 @@
 
 <img src="https://i.ibb.co/tD2ZRkj/logo-net-movies.png" align="right"
      title="net movies logo by Matheus Lopes" width="275" height="65"> 
-NET movies  is an app built with ruby on rails to consume the [https://api.themoviedb.org/](https://api.themoviedb.org/). With this app, you are to search a movie, see details of old and upcomming movies.
+NET movies  is an app built with ruby on rails to consume the [https://api.themoviedb.org/](https://api.themoviedb.org/). With this app, you are able to search a movie, see details of old or an upcomming movie.
 
-* NET movies will list you all the upcomming movies e their releases dates.
+* NET movies will list to you all the upcomming movies e their releases dates.
 * NET movies will show you the average rated on each movie.
 * NET movies will allow you to search for a movie even if you only remember a few key words.
-* NET movies has an awesome ui and ux, making it enjoyable to use.
+* NET movies has an awesome UI and UX, making it enjoyable to use.
 
 [cult-img]: http://cultofmartians.com/assets/badges/badge.svg
 [cult]:     http://cultofmartians.com/tasks/size-limit-config.html
+## Screenshots
+ <img src="https://i.ibb.co/xgDZsNF/login.png" data-load="full" style=""> 
+<img src="https://i.ibb.co/v3KVkcL/home.png" data-load="full" style=""> 
 
+     
 ## Third-Party Libraries
 
 * [Devise](https://github.com/plataformatec/devise)
