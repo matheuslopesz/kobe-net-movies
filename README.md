@@ -12,7 +12,12 @@ NET movies  is an app built with ruby on rails to consume the [https://api.themo
 
 [cult-img]: http://cultofmartians.com/assets/badges/badge.svg
 [cult]:     http://cultofmartians.com/tasks/size-limit-config.html
+## Screenshots
+ <img src="https://i.ibb.co/xgDZsNF/login.png" data-load="full" style=""> 
+<img src="https://i.ibb.co/v3KVkcL/home.png" data-load="full" style=""> 
+<img src="https://i.ibb.co/KLNCkFM/show.png" data-load="full" style=""> 
 
+     
 ## Third-Party Libraries
 
 * [Devise](https://github.com/plataformatec/devise)
