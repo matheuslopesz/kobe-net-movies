@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: net-movies
+  database: kobe-net-movies
   pool: 5
   username: ruby
   password: ruby
